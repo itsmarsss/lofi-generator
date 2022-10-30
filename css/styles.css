@@ -2,9 +2,120 @@
 
 body {
     font-family: 'Poppins',  sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4a4a4a, #1c1c1c, #010101);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 7s ease infinite;
+            animation: gradient 7s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1 {
-    margin: auto;
-    margin-left: auto;
+    position: absolute;
+    text-align: center;
+    background: #ffffff44;
+    color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+    transition: 100ms;
+}
+
+h1:hover {
+    font-size: 2.1rem;
+    color: #ececec;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+    margin-top: 10rem;
+    display: block;
+    justify-content: center;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    width: 3rem;
+    height: 3rem;
+    background: none;
+    outline: none;
+    border: none;
+    transition: 150ms;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+button:hover {
+    width: 3.1rem;
+    height: 3.1rem;
+}
+
+button:active {
+    width: 2.9rem;
+    height: 2.9rem;
+}
+
+.more {
+    margin-top: 5rem;
+}
+
+.play {
+    border-radius: 5rem;
+    border: solid white 0.25rem;
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 1rem;
+}
+
+.play:hover {
+    border: solid white 0.5rem;
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.play:active {
+    border: solid white 0.1rem;
+    width: 6.5rem;
+    height: 6.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-svg {
+    filter: invert(100%);
 }
