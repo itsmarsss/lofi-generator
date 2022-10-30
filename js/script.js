@@ -68,12 +68,13 @@ async function overlayOut(overlay) {
 }
 
 async function togglePlay() {
+    temp = playing;
     playing = !playing;
     for (i = 0; i <= 180; i+=4) {
         play_img.style.transform = 'rotate(' + i + 'deg)';
         await delay(1);
     }
-    if (playing) {
+    if (temp) {
         play_img.src = "./assets/stop.svg";
     } else {
         play_img.src = "./assets/play.svg";
