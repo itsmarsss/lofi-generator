@@ -12,6 +12,10 @@ body {
             animation: gradient 7s ease infinite;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 @-webkit-keyframes gradient {
     0% {
         background-position: 0% 50%;

@@ -18,7 +18,7 @@
     <div class="body">
         <div class="main">
             <button class="play" value="play">
-                <img class="filter-svg" id="play-img" draggable="false" src="./assets/stop.svg" />
+                <img class="filter-svg" id="play-img" draggable="false" src="./assets/play.svg" />
             </button>
         </div>
 
@@ -54,10 +54,15 @@
     <div class="overlay" id="settings-overlay">
         <h2>Lofi Settings</h2>
 
+
+
         <input type="button" class="exit" value="Exit" onclick="exit_settings()">
     </div>
 
+    <audio id="note" controls="" preload="" src="" autoplay="" crossorigin="anonymous"></audio>
+
     <script src="./js/script.js"></script>
+    <script src="./js/player.js"></script>
 
 </body>
 
