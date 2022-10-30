@@ -6,7 +6,12 @@ const settings = document.querySelector(".settings");
 const sound_overlay = document.getElementById("sound-overlay");
 const settings_overlay  = document.getElementById("settings-overlay");
 
+const vol_slider = document.getElementById("volume");
+const vol_mag = document.getElementById("vol-mag");
+
 const play_img = document.getElementById("play-img");
+
+var volume = 1;
 
 playing = false;
 
@@ -30,6 +35,11 @@ async function exit_sound() {
 
 settings.addEventListener("click", (event) => {
     overlayIn(settings_overlay);
+});
+
+vol_slider.addEventListener("input", (event) => {
+    vol_mag.innerHTML = vol_slider.value;
+    volume = vol_slider.value/100;
 });
 
 async function exit_settings() {
@@ -58,6 +68,7 @@ async function overlayOut(overlay) {
 }
 
 async function togglePlay() {
+    playing = !playing;
     for (i = 0; i <= 180; i+=4) {
         play_img.style.transform = 'rotate(' + i + 'deg)';
         await delay(1);
@@ -71,7 +82,6 @@ async function togglePlay() {
         play_img.style.transform = 'rotate(' + i + 'deg)';
         await delay(1);
     }
-    playing = !playing;
 }
 
 function delay(time) {

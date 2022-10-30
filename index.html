@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="icon" href="./assets/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <div class="title">
         <h1>Lofi Music Generator</h1>
@@ -16,19 +18,19 @@
     <div class="body">
         <div class="main">
             <button class="play" value="play">
-                <img class="filter-svg" id="play-img" draggable="false" src="./assets/stop.svg"/>
+                <img class="filter-svg" id="play-img" draggable="false" src="./assets/stop.svg" />
             </button>
         </div>
 
         <div class="more">
             <button class="sound" value="sound">
-                <img class="filter-svg" draggable="false" src="./assets/sound.svg"/>
+                <img class="filter-svg" draggable="false" src="./assets/sound.svg" />
             </button>
             <button class="refresh" value="refresh">
-                <img class="filter-svg" draggable="false" src="./assets/refresh.svg" onclick="refresh()"/>
+                <img class="filter-svg" draggable="false" src="./assets/refresh.svg" onclick="refresh()" />
             </button>
             <button class="settings" value="settings">
-                <img class="filter-svg" draggable="false" src="./assets/settings.svg"/>
+                <img class="filter-svg" draggable="false" src="./assets/settings.svg" />
             </button>
         </div>
     </div>
@@ -36,19 +38,27 @@
     <div class="overlay" id="sound-overlay">
         <h2>Sound Settings</h2>
         <h3>Volume</h3>
-        <input type="range" min="0" max="100" value="100" class="slider" id="volume">
+        <div class="volume">
+            <input type="range" min="0" max="100" value="100" class="slider" id="volume">
+            <h4 style="text-align: center;" id="vol-mag">100</h4>
+        </div>
         <h3>Balance</h3>
-        <input type="range" min="0" max="100" value="50" class="slider" id="range">
+        <div class="balance">
+            <h4 style="text-align: left;">L</h4>
+            <input type="range" min="0" max="100" value="50" class="slider" id="range">
+            <h4 style="text-align: right;">R</h4>
+        </div>
         <input type="button" class="exit" value="Exit" onclick="exit_sound()">
     </div>
 
     <div class="overlay" id="settings-overlay">
         <h2>Lofi Settings</h2>
-        
+
         <input type="button" class="exit" value="Exit" onclick="exit_settings()">
     </div>
 
     <script src="./js/script.js"></script>
 
 </body>
+
 </html>
