@@ -1,9 +1,10 @@
 const play = document.querySelector(".play");
-const volume = document.querySelector(".volume");
+const sound = document.querySelector(".sound");
 const refresh = document.querySelector(".refresh");
 const settings = document.querySelector(".settings");
 
-const volume_overlay = document.getElementById("volume-overlay");
+const sound_overlay = document.getElementById("sound-overlay");
+const settings_overlay  = document.getElementById("settings-overlay");
 
 const play_img = document.getElementById("play-img");
 
@@ -19,26 +20,40 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-volume.addEventListener("click", (event) => {
-    overlayIn(volume_overlay);
+sound.addEventListener("click", (event) => {
+    overlayIn(sound_overlay);
 });
 
-async function exit_volume() {
-    overlayOut(volume_overlay);
+async function exit_sound() {
+    overlayOut(sound_overlay);
+}
+
+settings.addEventListener("click", (event) => {
+    overlayIn(settings_overlay);
+});
+
+async function exit_settings() {
+    overlayOut(settings_overlay);
 }
 
 async function overlayIn(overlay) {
-    overlay.style.transform = 'scale(0)'
+    overlay.style.opacity = 1;
+    overlay.style.transform = 'scale(0)';
     overlay.style.display = "block";
     
     for (i = 0; i <= 100; i+=5) {
         overlay.style.transform = 'scale(' + (i/100) + ')';
+        overlay.style.transform += 'translate(-50%, -50%)';
         await delay(1);
     }
-    overlay.style.transform = 'translate(-50%, -50%)';
 }
 
 async function overlayOut(overlay) {
+    for (i = 100; i >= 0; i-=5) {
+        overlay.style.opacity = i/100;
+        await delay(5);
+        console.log(overlay.style.transform)
+    }
     overlay.style.display = "none";
 }
 

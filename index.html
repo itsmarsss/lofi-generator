@@ -21,11 +21,11 @@
         </div>
 
         <div class="more">
-            <button class="volume" value="volume">
-                <img class="filter-svg" draggable="false" src="./assets/volume.svg"/>
+            <button class="sound" value="sound">
+                <img class="filter-svg" draggable="false" src="./assets/sound.svg"/>
             </button>
             <button class="refresh" value="refresh">
-                <img class="filter-svg" draggable="false" src="./assets/refresh.svg"/>
+                <img class="filter-svg" draggable="false" src="./assets/refresh.svg" onclick="refresh()"/>
             </button>
             <button class="settings" value="settings">
                 <img class="filter-svg" draggable="false" src="./assets/settings.svg"/>
@@ -33,13 +33,19 @@
         </div>
     </div>
 
-    <div class="overlay" id="volume-overlay">
+    <div class="overlay" id="sound-overlay">
         <h2>Sound Settings</h2>
         <h3>Volume</h3>
         <input type="range" min="0" max="100" value="100" class="slider" id="volume">
         <h3>Balance</h3>
         <input type="range" min="0" max="100" value="50" class="slider" id="range">
-        <input type="button" class="exit" value="Exit" onclick="exit_volume()">
+        <input type="button" class="exit" value="Exit" onclick="exit_sound()">
+    </div>
+
+    <div class="overlay" id="settings-overlay">
+        <h2>Lofi Settings</h2>
+        
+        <input type="button" class="exit" value="Exit" onclick="exit_settings()">
     </div>
 
     <script src="./js/script.js"></script>
