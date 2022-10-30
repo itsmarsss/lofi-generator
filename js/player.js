@@ -1,17 +1,5 @@
 var ctx = window.AudioContext || window.webkitAudioContext;
-var audioContext = new ctx();
 
-
-let audio2 = document.getElementById('note');
-var biquadExampleMediaElementSource = audioContext.createMediaElementSource(audio2);
-
-var filterNode = audioContext.createBiquadFilter();
-
-biquadExampleMediaElementSource.connect(filterNode);
-
-filterNode.connect(audioContext.destination);
-
-filterNode.frequency.value = parseFloat(300);
 
 bpm = 80;
 dur = 90;
@@ -49,6 +37,19 @@ async function playNotes(notes) {
             audio = './sounds/keys/key' + note + '.mp3';
         }
         audio2.src = audio;
+        var audioContext = new ctx();
+
+
+        let audio2 = document.getElementById('note');
+        var biquadExampleMediaElementSource = audioContext.createMediaElementSource(audio2);
+
+        var filterNode = audioContext.createBiquadFilter();
+
+        biquadExampleMediaElementSource.connect(filterNode);
+
+        filterNode.connect(audioContext.destination);
+
+        filterNode.frequency.value = parseFloat(300);
 
         console.log(i)
 
